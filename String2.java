@@ -2,7 +2,16 @@ class String2{
     public static void main(String[] args) {
 
 
-        // String s= new String("hello world");
+        String s= new String("       hello world this is new      ");
+        System.out.println(s);
+        s=s.trim();
+        System.out.println(s);
+        
+        // String arr[] = s.split( "o");
+        // for(String str:arr){
+        //     System.out.println(str);
+        // }
+        
 
         // System.out.println(s.charAt(8));
         // System.out.println(s.substring(6));
@@ -12,28 +21,28 @@ class String2{
         // System.out.println(s.toUpperCase());
         // System.out.println(s.endsWith("wo"));
 
-        String str[]={"abc.py","test.java", "index.html", "Human.java", "Test.py"};
+        // String str[]={"abc.py","test.java", "index.html", "Human.java", "Test.py"};
 
 
-        int size=0;
-        for(String s: str){
-            if(s.endsWith(".java")){
-                size++;
-            }
-        }
+        // int size=0;
+        // for(String s: str){
+        //     if(s.endsWith(".java")){
+        //         size++;
+        //     }
+        // }
 
-        String arr[]= new String[size];
-        int i=0;
-        for(String s: str){
-            if(s.endsWith(".java")){
-                arr[i]=s;
-                i=i+1;
-            }
-        }
+        // String arr[]= new String[size];
+        // int i=0;
+        // for(String s: str){
+        //     if(s.endsWith(".java")){
+        //         arr[i]=s;
+        //         i=i+1;
+        //     }
+        // }
 
-        for(String s:arr){
-            System.out.println(s);
-        }
+        // for(String s:arr){
+        //     System.out.println(s);
+        // }
 
 
         //literal??//a constants => that are assigned to a variables

@@ -2,10 +2,48 @@ class String2{
     public static void main(String[] args) {
 
 
-        String s= new String("       hello world this is new      ");
-        System.out.println(s);
-        s=s.trim();
-        System.out.println(s);
+        String s ="this is a new string this";
+        System.out.println(s.length());
+        System.out.println(s.contains("thhs"));
+        System.out.println(s.replaceAll("this", "what"));
+        System.out.println(s.concat("what is this string"));
+        byte arr[]=s.getBytes();
+        for(byte b:arr){
+            System.out.print(b+" ");
+        }
+        System.out.println();
+        char arrch []= new char[s.length()] ;
+        s.getChars(0, s.length(),arrch,0 );
+
+        for(char ch : arrch){
+            System.out.print(ch+" ");
+        }
+        // String s = "tree";//literal 
+        // String s2 =  new String("tree");//heap
+        // System.out.println(s==s2);
+        // System.out.println(s.equals(s2));
+        
+        //char ch[] ={'a','b','c','d','e','f','g','h'};
+        // String s3 = new String(ch, 2,5);
+        // String s4 = new String(ch);
+        // System.out.println(s4);
+
+        // byte b[]= {65,66,67,68,69,70};
+        // String s5 = new String(b);
+        // System.out.println(s5);
+
+        // String s6 = new String(b, 0,3);
+        // System.out.println(s6);
+
+       
+
+
+
+        // String s= new String("       hello world this is new      ");
+        // System.out.println(s);
+        // s=s.trim();
+
+        // System.out.println(s);
         
         // String arr[] = s.split( "o");
         // for(String str:arr){

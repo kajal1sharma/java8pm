@@ -2,22 +2,44 @@ class String2{
     public static void main(String[] args) {
 
 
-        String s ="this is a new string this";
-        System.out.println(s.length());
-        System.out.println(s.contains("thhs"));
-        System.out.println(s.replaceAll("this", "what"));
-        System.out.println(s.concat("what is this string"));
-        byte arr[]=s.getBytes();
-        for(byte b:arr){
-            System.out.print(b+" ");
-        }
-        System.out.println();
-        char arrch []= new char[s.length()] ;
-        s.getChars(0, s.length(),arrch,0 );
+        String str= "hello this is new world";
+        // finalans = "world new is this hello";
+        String strarr[] = str.split(" ");
 
-        for(char ch : arrch){
-            System.out.print(ch+" ");
+        for(int i=0, j=strarr.length-1;i<j;i++,j--){
+            String temp= strarr[i];
+            strarr[i]=strarr[j];
+            strarr[j]=temp;
         }
+        for(String s: strarr){
+            System.out.print(s+"  ");
+        }
+        //reverse the string
+        // String s="ramanujan";
+        // //rev = "najunamar"
+        // String rev="";
+        // for(int i=0;i<s.length();i++){
+        //     rev = s.charAt(i)+rev;
+        // }
+        // System.out.println(rev);
+
+
+        // String s ="this is a new string this";
+        // System.out.println(s.length());
+        // System.out.println(s.contains("thhs"));
+        // System.out.println(s.replaceAll("this", "what"));
+        // System.out.println(s.concat("what is this string"));
+        // byte arr[]=s.getBytes();
+        // for(byte b:arr){
+        //     System.out.print(b+" ");
+        // }
+        // System.out.println();
+        // char arrch []= new char[100] ;
+        // s.getChars(0, s.length(),arrch,0 );
+
+        // for(char ch : arrch){
+        //     System.out.print(ch+" ");
+        // }
         // String s = "tree";//literal 
         // String s2 =  new String("tree");//heap
         // System.out.println(s==s2);

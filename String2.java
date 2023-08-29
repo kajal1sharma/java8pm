@@ -1,19 +1,24 @@
 class String2{
     public static void main(String[] args) {
 
+        //Ques1
+        //is the string palindrome or not => saras => saras
+        //Ques 2
+        //String str ="abcdabcdlkjkfgdklfsdkl";
+        //you have to find the characters which have been repeated 
 
-        String str= "hello this is new world";
-        // finalans = "world new is this hello";
-        String strarr[] = str.split(" ");
+        // String str= "hello this is new world";
+        // // finalans = "world new is this hello";
+        // String strarr[] = str.split(" ");
 
-        for(int i=0, j=strarr.length-1;i<j;i++,j--){
-            String temp= strarr[i];
-            strarr[i]=strarr[j];
-            strarr[j]=temp;
-        }
-        for(String s: strarr){
-            System.out.print(s+"  ");
-        }
+        // for(int i=0, j=strarr.length-1;i<j;i++,j--){
+        //     String temp= strarr[i];
+        //     strarr[i]=strarr[j];
+        //     strarr[j]=temp;
+        // }
+        // for(String s: strarr){
+        //     System.out.print(s+"  ");
+        // }
         //reverse the string
         // String s="ramanujan";
         // //rev = "najunamar"

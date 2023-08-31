@@ -2,17 +2,26 @@ public class ExceptionHandling {
 
     public static void doSomethingEvenMore(){
         System.out.println("Line 7 = do Something even more");
+   
         int a=90/0;
+        
         System.out.println("Line 8 = doSomething even more");
     }
     public static void doSomethingMore(){
         System.out.println("Line 5 = doSomethingMore");
+       // try{
         doSomethingEvenMore();
+       
         System.out.println("Line 6 = doSomethingMore");
     }
     public static void  doSomething(){
         System.out.println("Line 3 = doSomething");
+        try{
         doSomethingMore();
+         }
+        catch(Exception e){
+            System.out.println("nhfgfd");
+        }
         System.out.println("Line 4 = do something ");
     }
     public static void main(String[] args) {

@@ -6,6 +6,11 @@ class String2{
         //Ques 2
         //String str ="abcdabcdlkjkfgdklfsdkl";
         //you have to find the characters which have been repeated 
+        //Ques 3
+        //String str ="jkafjnajdsngdjasng";
+        //only one occurrance should be kept in the resultant string
+
+        
 
         // String str= "hello this is new world";
         // // finalans = "world new is this hello";

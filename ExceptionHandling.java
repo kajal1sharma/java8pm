@@ -1,35 +1,48 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
+
 public class ExceptionHandling {
 
-    public static void doSomethingEvenMore(){
+    public static void doDivision() throws Exception{
+       Scanner sc= new Scanner(System.in);
+       int a=sc.nextInt();
+       int b=sc.nextInt();
+       System.out.println(a/b);
+        
+    }
+    public static void doSomethingEvenMore() throws Exception {
         System.out.println("Line 7 = do Something even more");
    
-        int a=90/0;
+        // FileReader f= new FileReader("abc.txt");
+        doDivision();
+
         
         System.out.println("Line 8 = doSomething even more");
     }
-    public static void doSomethingMore(){
+    public static void doSomethingMore()  throws Exception {
         System.out.println("Line 5 = doSomethingMore");
-       // try{
+        //try{
         doSomethingEvenMore();
-       
+        // }
+        // catch(Exception e){
+        //     System.out.println("hand;ed");
+        // }
         System.out.println("Line 6 = doSomethingMore");
     }
-    public static void  doSomething(){
+    public static void  doSomething()  throws Exception{
         System.out.println("Line 3 = doSomething");
-        try{
+   
         doSomethingMore();
-         }
-        catch(Exception e){
-            e.printStackTrace();
-            // System.out.println();
-        }
+        
         System.out.println("Line 4 = do something ");
     }
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws Exception{
         System.out.println("Line 1 = main");
         doSomething();
         System.out.println("Line 2 = main");
+        //checked exception
 
 
 

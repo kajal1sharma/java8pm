@@ -18,8 +18,8 @@ public class ExceptionHandling2 {
     public static void main(String[] args) throws URISyntaxException{
         
         try{
-            URI uri = new URI("file:///address of remote server/filename");
-            File f = new File(uri);
+            
+            File f = new File("text.txt");
             FileReader f2= new FileReader(f);
         }
         catch(FileNotFoundException e){

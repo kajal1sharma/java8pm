@@ -20,7 +20,8 @@ public class ExceptionHandling {
         doSomethingMore();
          }
         catch(Exception e){
-            System.out.println("nhfgfd");
+            e.printStackTrace();
+            // System.out.println();
         }
         System.out.println("Line 4 = do something ");
     }

@@ -7,17 +7,22 @@ public class Stack {
     }
 
     boolean push(int data){
+        synchronized(this){
         if(top==arr.length-1){
-            return false;
+                return false;
+            }
+            else{
+                top++;
+                arr[top]=data;
+                return true;
+            }
         }
-        else{
-            top++;
-            arr[top]=data;
-            return true;
-        }
+        
     }
     int pop(){
-        if(top==-1){
+          
+       synchronized(this) {
+            if(top==-1){
             return Integer.MIN_VALUE;
 
         }
@@ -26,5 +31,7 @@ public class Stack {
             top--;
             return result;
         }
+        }
+    
     }
 }

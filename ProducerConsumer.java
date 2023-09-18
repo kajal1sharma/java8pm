@@ -11,7 +11,7 @@ public class ProducerConsumer {
     }
 
     boolean add(int ele){
-        if(q.size()==capacity){
+        while(q.size()==capacity){
             try {
                 q.wait();
             } catch (InterruptedException e) {
@@ -27,7 +27,7 @@ public class ProducerConsumer {
     }
 
     int remove(){
-        if(q.size()==0){
+        while(q.size()==0){
             try {
                 q.wait();
             } catch (InterruptedException e) {

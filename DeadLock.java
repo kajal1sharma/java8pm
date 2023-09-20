@@ -40,9 +40,9 @@ class ThreadDeadlock2 extends Thread{
                 e.printStackTrace();
             }
             System.out.println("iam running first sync block with a"+Thread.currentThread().getName());
-        synchronized(r1){
-            System.out.println("iam running first sync block with b"+Thread.currentThread().getName());
-        }
+            synchronized(r1){
+                System.out.println("iam running first sync block with b"+Thread.currentThread().getName());
+            }
         }
         
     }

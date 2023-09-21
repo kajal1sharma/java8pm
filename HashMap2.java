@@ -26,8 +26,24 @@ public class HashMap2<M,N> {
         for(int i=0;i<=top;i++){
             System.out.println(arr[i].key+" "+arr[i].value);
         }
+        System.out.println("==========================");
     }
     
+    void remove(int i){
+        for(int j=i;j<top;j++){
+            arr[j]=arr[j+1];
+
+        }
+        arr[top]=null;
+        top--;
+    }
+    void removeEnd(){
+        if(top==-1){
+            return;
+        }
+        arr[top]=null;
+        top--;
+    }
 
     //remove(i)
 }

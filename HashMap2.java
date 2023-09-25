@@ -18,8 +18,29 @@ public class HashMap2<M,N> {
     }
 
     void add(M key , N value){
-        Pair<M,N> obj1 = new Pair<>(key, value);
-        arr[++top] = obj1;
+        if(top<arr.length-1){
+            Pair<M,N> obj1 = new Pair<>(key, value);
+            arr[++top] = obj1;
+        }
+    }
+
+     void add(int i,M key , N value){
+     
+        if(top<arr.length-1){
+            Pair<M,N> obj1 = new Pair<>(key, value);
+            if(i>top){
+                arr[++top]=obj1;
+            }
+            else{
+                
+                for(int j =top ;j>=i;j--){
+                    arr[j+1]=arr[j];
+                }
+                top++;;
+                arr[i]=obj1;
+            }
+        }
+
     }
     
     void getInfo(){

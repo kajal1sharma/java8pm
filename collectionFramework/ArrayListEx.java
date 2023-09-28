@@ -1,25 +1,56 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 public class ArrayListEx{
     public static void main(String[] args){
 
 
-        String str1= "this is a string and this is repeated string";
-        //this is a string and repeated
-        String arr[] = str1.split(" ");
+        ArrayList <String> list = new ArrayList<>();
+        list.add("reema");
+        list.add("ram");
+        list.add("nitesh");
+        list.add("tina");
 
-        ArrayList<String > list = new ArrayList<>();
-        for(int i=0;i<arr.length;i++){
-            if(!list.contains(arr[i])){
-                list.add(arr[i]);
-            }
-        }
 
-        StringBuilder st = new StringBuilder();
-        for(int i=0;i<list.size();i++){
-            st=st.append(list.get(i)+" ");
+        Iterator<String> itr = list.listIterator();
+
+        while(itr.hasNext()){
+            System.out.println(itr.next());
         }
-        System.out.println(st);
+        
+        
+        // Iterator<String> it = list.iterator();
+        // System.out.println(it.hasNext());
+        // System.out.println(it.next());
+        // System.out.println(it.next());
+        // System.out.println(it.next());
+        // System.out.println(it.next());
+        // System.out.println(it.next());
+        // for(String str: list){
+        //     System.out.println(str);
+        // }
+
+        // for(int i=0;i<list.size();i++){
+        //     System.out.println(list.get(i));
+        // }
+
+        // String str1= "this is a string and this is repeated string";
+        // //this is a string and repeated
+        // String arr[] = str1.split(" ");
+
+        // ArrayList<String > list = new ArrayList<>();
+        // for(int i=0;i<arr.length;i++){
+        //     if(!list.contains(arr[i])){
+        //         list.add(arr[i]);
+        //     }
+        // }
+
+        // StringBuilder st = new StringBuilder();
+        // for(int i=0;i<list.size();i++){
+        //     st=st.append(list.get(i)+" ");
+        // }
+        // System.out.println(st);
 
         // ArrayList<String> list = new ArrayList<>(10);
         // //System.out.println(list.size());

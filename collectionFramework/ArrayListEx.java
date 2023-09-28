@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.ListIterator;
 public class ArrayListEx{
     public static void main(String[] args){
 
@@ -13,11 +14,21 @@ public class ArrayListEx{
         list.add("tina");
 
 
-        Iterator<String> itr = list.listIterator();
+        ListIterator<String> itr = list.listIterator();
 
         while(itr.hasNext()){
             System.out.println(itr.next());
         }
+
+        System.out.println(itr.nextIndex());
+
+        while(itr.hasPrevious()){
+            System.out.println(itr.previous());
+        }
+
+        System.out.println(itr.nextIndex());
+
+        
         
         
         // Iterator<String> it = list.iterator();

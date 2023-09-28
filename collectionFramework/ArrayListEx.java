@@ -28,7 +28,13 @@ public class ArrayListEx{
 
         System.out.println(itr.nextIndex());
 
-        
+        itr.next();
+       
+        itr.add("nisha");
+        System.out.println(list);
+        itr.next();
+        itr.remove();
+        System.out.println(list);
         
         
         // Iterator<String> it = list.iterator();

@@ -5,14 +5,29 @@ public class ArrayListEx{
 
 
         String str1= "this is a string and this is repeated string";
-                    //this is a string and repeated
-        ArrayList<String> list = new ArrayList<>(10);
-        //System.out.println(list.size());
-        list.add("sita");
-        list.add("gita");
-        list.add("meeta");
-        String str= list.get(0);
-        System.out.println(str);
+        //this is a string and repeated
+        String arr[] = str1.split(" ");
+
+        ArrayList<String > list = new ArrayList<>();
+        for(int i=0;i<arr.length;i++){
+            if(!list.contains(arr[i])){
+                list.add(arr[i]);
+            }
+        }
+
+        StringBuilder st = new StringBuilder();
+        for(int i=0;i<list.size();i++){
+            st=st.append(list.get(i)+" ");
+        }
+        System.out.println(st);
+
+        // ArrayList<String> list = new ArrayList<>(10);
+        // //System.out.println(list.size());
+        // list.add("sita");
+        // list.add("gita");
+        // list.add("meeta");
+        // String str= list.get(0);
+        // System.out.println(str);
 
         // HashSet<String> hs= new HashSet<>();
         // hs.add("siita");

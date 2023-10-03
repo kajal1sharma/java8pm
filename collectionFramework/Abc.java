@@ -3,6 +3,7 @@ class Bcd{
 
 }
 public class Abc implements Cloneable {
+    
     int a;
     int b;
     Bcd t;
@@ -12,7 +13,10 @@ public class Abc implements Cloneable {
         this.t=new Bcd();
     }
     public Object clone() throws CloneNotSupportedException{
-        return super.clone();
+         Abc temp=(Abc)super.clone();
+         temp.t= new Bcd();
+         temp.t.c= this.t.c;
+         return temp;
     }
     public static void main(String[] args) throws CloneNotSupportedException{
         Abc obj=new Abc(34, 56);

@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
+
+
+
 public class IterableIntf {
     
-    public Object clone() throws CloneNotSupportedException{
-        return super.clone();
-    }
+    
     
     public static void main(String[] args) {
 

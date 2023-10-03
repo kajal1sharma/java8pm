@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
-class Test{
+class Test implements Cloneable{
     int a;
     Test(int a){
         this.a=a;
@@ -12,7 +12,7 @@ class Test{
 }
 public class IterableIntf {
 
-    public ArrayList<Test> cloneIt(ArrayList<Test> list1) throws CloneNotSupportedException{
+    static public ArrayList<Test> cloneIt(ArrayList<Test> list1) throws CloneNotSupportedException{
         ArrayList<Test> list2= new ArrayList<>();
 
         for(Test temp : list1){
@@ -21,7 +21,7 @@ public class IterableIntf {
         }
         return list2;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
         Test t1=new Test(10);
          Test t2=new Test(20);
@@ -33,7 +33,7 @@ public class IterableIntf {
         list1.add(t3);
         list1.add(t4);
 
-        ArrayList<Test> list2= (ArrayList)  list1.clone();
+        ArrayList<Test> list2=cloneIt(list1);
         // ArrayList<Test> list2= new ArrayList<>();
         // list2.add(null);
         // list2.add(null);

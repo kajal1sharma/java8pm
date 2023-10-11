@@ -18,18 +18,18 @@ public class QueueIntf {
         list.add(20);
         list.add(50);
 LinkedList<Integer> list2= new LinkedList<>();
-        list.add(100);
-        list.add(400);
-        list.add(300);
-        list.add(900);
-        list.add(200);
-        list.add(500);
+        list2.add(100);
+        list2.add(400);
+        list2.add(300);
+        list2.add(900);
+        list2.add(200);
+        list2.add(500);
         
         Collections.sort(list);//Collections => utility class
         Collections.swap(list, 0,3);
         Collections.copy(list,list2);
-        System.out.println(Collections.max(list));
-        System.out.println(Collections.frequency(list, 500));
+        // System.out.println(Collections.max(list));
+        // System.out.println(Collections.frequency(list, 500));
         // Collections.rotate(list,2);
         // Collections.shuffle(list);
         System.out.println(list);

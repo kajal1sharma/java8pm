@@ -6,6 +6,10 @@ import java.util.List;
 
 public class Queue3 {
     public static void main(String[] args) {
+        //unbounded queue and bounded queue
+        //blocking and non blocking queuec
+
+
         //Deque<Integer> dq = new LinkedList<>();
         Deque<Integer> dq2 = new ArrayDeque<>();
         dq2.add(10);
@@ -29,7 +33,7 @@ public class Queue3 {
 
         list.addAll(dq2);
         System.out.println("list element ===============");
-        System.out.println(list);
+        System.out.println(dq2);
 
 
         // dq2.addLast(null);

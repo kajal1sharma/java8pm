@@ -1,6 +1,10 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+class Car{
+    int tyres;
+    String color;
+}
 public class PriotyQueueI {
     public static void main(String[] args) {
         // PriorityQueue<Integer> pq= new PriorityQueue<>();

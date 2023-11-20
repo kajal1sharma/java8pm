@@ -205,3 +205,66 @@ mysql> select * from studentrecord;
 |  4 | tina  |     0 | french  |
 +----+-------+-------+---------+
 4 rows in set (0.00 sec)
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+mysql> create table emp_record(
+    -> id int not null,
+    -> age int not null check(age >20));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> describe emp_record;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | NO   |     | NULL    |       |
+| age   | int  | NO   |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> insert into emp_record (id , age) values (1, 18),(2,34),(3,56);
+ERROR 3819 (HY000): Check constraint 'emp_record_chk_1' is violated.
+mysql> insert into emp_record (id , age) values (1, 21),(2,34),(3,56);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> create table clothes (
+    -> id int auto_increment,
+    -> brand varchar(50) not null,
+    -> size enum('s','m','l')
+    -> );
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> create table clothes (
+    -> id int auto_increment primary key,
+    -> brand varchar(50) not null,
+    -> size enum('s','m','l')
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> describe clothes;
++-------+-------------------+------+-----+---------+----------------+
+| Field | Type              | Null | Key | Default | Extra          |
++-------+-------------------+------+-----+---------+----------------+
+| id    | int               | NO   | PRI | NULL    | auto_increment |
+| brand | varchar(50)       | NO   |     | NULL    |                |
+| size  | enum('s','m','l') | YES  |     | NULL    |                |
++-------+-------------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into clothes(id, brand, size) values (1,'levis','s'),(2, 'nike','m');
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from clothes;
++----+-------+------+
+| id | brand | size |
++----+-------+------+
+|  1 | levis | s    |
+|  2 | nike  | m    |
++----+-------+------+
+2 rows in set (0.00 sec)

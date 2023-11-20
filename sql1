@@ -150,4 +150,58 @@ mysql> describe studentRecord;
 | marks   | int         | NO   |     | NULL    |       |
 | subject | varchar(50) | NO   |     | NULL    |       |
 +---------+-------------+------+-----+---------+-------+
-4 rows in set (0.01 sec)
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+mysql> insert into studentrecord(id , name , subject , marks) values
+    -> (1,'nisha','maths',34)
+    -> ,(2, 'meera','english',65),
+    -> (3,'ria','science',89);
+Query OK, 3 rows affected (0.11 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from studentrecord;
++----+-------+-------+---------+
+| id | name  | marks | subject |
++----+-------+-------+---------+
+|  1 | nisha |    34 | maths   |
+|  2 | meera |    65 | english |
+|  3 | ria   |    89 | science |
++----+-------+-------+---------+
+3 rows in set (0.00 sec)
+
+mysql> insert into studentrecord(id , name ) values (4,'tina');
+ERROR 1364 (HY000): Field 'marks' doesn't have a default value
+mysql> alter table studentrecord change marks marks int not null defult(0);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'defult(0)' at line 1
+mysql> alter table studentrecord change marks marks int not null defult 0;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'defult 0' at line 1
+mysql> alter table studentrecord change marks marks int not null default 0;
+Query OK, 0 rows affected (0.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe studentrecord;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   |     | NULL    |       |
+| name    | varchar(50) | NO   |     | NULL    |       |
+| marks   | int         | NO   |     | 0       |       |
+| subject | varchar(50) | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
+
+mysql> insert into studentrecord(id , name , subject) values (4,'tina','french');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from studentrecord;
++----+-------+-------+---------+
+| id | name  | marks | subject |
++----+-------+-------+---------+
+|  1 | nisha |    34 | maths   |
+|  2 | meera |    65 | english |
+|  3 | ria   |    89 | science |
+|  4 | tina  |     0 | french  |
++----+-------+-------+---------+
+4 rows in set (0.00 sec)

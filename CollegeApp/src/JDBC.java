@@ -11,11 +11,44 @@ public class JDBC {
     static final String password ="root";
 
     // Crud => create read update delete
+    static void deleteFromDB(String table, int id){
+         try{
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String query = "delete from "+table+" where roll = ?";
+            PreparedStatement stm = conn.prepareStatement(query);
+           
+            stm.setInt(1, id);
+            stm.execute();  
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    static void updateInDB(String table, String updatedname, int id){
+         try{
+
+            Connection conn = DriverManager.getConnection(url, username, password);
+            String query = "update "+table+" set name = ? where roll= ? ";
+            PreparedStatement stm = conn.prepareStatement(query);
+           
+            stm.setString(1, updatedname);
+            stm.setInt(2, id);
+           
+            
+            stm.execute();  
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     static void readFromDB(String table){
         try{
             Connection conn = DriverManager.getConnection(url, username, password);
             String query= "select * from "+table;
             Statement stm = conn.createStatement();
+            // boolean res= stm.execute(query);
+            // System.out.println(res);
             ResultSet set=stm.executeQuery(query);
 
                 while(set.next()){

@@ -4,7 +4,9 @@ public class App {
         // JDBC.insertIntoDB("student", 4, "ankita");
         // JDBC.insertIntoDB("student", 5, "shina");
         // JDBC.insertIntoDB("student", 6, "ankit");
-        JDBC.readFromDB("student");
+        // JDBC.readFromDB("student");
+        JDBC.deleteFromDB("student", 1);
+        // JDBC.updateInDB("student", "nikita", 1);
         // College.collegeName="Abcd";
         // College c= new College();
 

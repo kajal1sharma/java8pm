@@ -1,3 +1,4 @@
+package college;
 public class Student {
     String roll;//every student will have different
     String name;

@@ -1,3 +1,4 @@
+package college;
 import java.util.ArrayList;
 
 public class College {

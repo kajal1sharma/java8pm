@@ -1,3 +1,4 @@
+package college;
 public class Address {
     int houseNo;
     String street;

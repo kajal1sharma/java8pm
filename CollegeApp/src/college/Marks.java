@@ -1,3 +1,4 @@
+package college;
 public class Marks {
     int subject1;
     int subject2;

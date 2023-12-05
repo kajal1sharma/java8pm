@@ -1,3 +1,4 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -6,7 +7,7 @@ import java.sql.Statement;
 
 
 public class JDBC {
-    static final String url = "jdbc:mysql://localhost/college";
+    static final String url = "jdbc:mysql://localhost/user";
     static final String username = "root";
     static final String password ="root";
 
@@ -42,18 +43,26 @@ public class JDBC {
             e.printStackTrace();
         }
     }
-    static void readFromDB(String table){
+    static void readFromDB(String table, String username1, String password1){
         try{
             Connection conn = DriverManager.getConnection(url, username, password);
-            String query= "select * from "+table;
-            Statement stm = conn.createStatement();
-            // boolean res= stm.execute(query);
-            // System.out.println(res);
-            ResultSet set=stm.executeQuery(query);
-
+            String query= "select * from "+table+" where username = ? and password = ? ;";            
+            PreparedStatement stm = conn.prepareStatement(query);
+            // stm.setString(1, "roll");
+            stm.setString(2, password1);
+            stm.setString(1, username1);
+            ResultSet set=stm.executeQuery();
+            // if(set.getFetchSize()==0){
+            //     System.out.println("no such user found");
+            //     return;
+            // }
+            // if(set==null){
+            //     System.out.println("no such user found");
+            //     return;
+            // }
                 while(set.next()){
                     
-                    System.out.println(set.getInt(1));
+                    System.out.println(set.getString(1));
                     System.out.println(set.getString(2));
                 }
 
@@ -62,15 +71,15 @@ public class JDBC {
             e.printStackTrace();
         }
     }
-    static void insertIntoDB(String table, int roll ,String name) {
+    static void insertIntoDB(String table, String username1 ,String password1) {
         try{
 
             Connection conn = DriverManager.getConnection(url, username, password);
-            String query = "insert into "+table+" (roll, name) values (?, ?)";
+            String query = "insert into "+table+" (username, password) values (?, ?)";
             PreparedStatement stm = conn.prepareStatement(query);
             // stm.setString(1, "roll");
-           stm.setString(2, name);
-            stm.setInt(1, roll);
+           stm.setString(2, password1);
+            stm.setString(1, username1);
             
             stm.execute();  
         }
